@@ -8,12 +8,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@contentful/rich-text-html-renderer": "^15.11.1",
+    "@contentful/rich-text-react-renderer": "^15.11.1",
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@mdi/js": "^6.5.95",
+    "@mdi/react": "^1.5.0",
+    "@mui/material": "^5.2.7",
+    "graphql-request": "^3.7.0",
     "next": "12.0.7",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
   "devDependencies": {
     "eslint": "8.6.0",
-    "eslint-config-next": "12.0.7"
+    "eslint-config-next": "12.0.7",
+    "sass": "^1.46.0"
   }
 }

@@ -1,0 +1,8 @@
+.backbutton {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.backbutton:hover {
+  font-weight: bold;
+}
