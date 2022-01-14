@@ -1,5 +1,5 @@
 import { gql, GraphQLClient } from 'graphql-request';
-import { Config } from '../../pages/utils/Config';
+import { Config } from './Config';
 
 const endpoint = `https://graphql.contentful.com/content/v1/spaces/${process.env.SPACE_ID}`;
 

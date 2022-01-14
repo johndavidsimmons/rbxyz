@@ -2,9 +2,9 @@ import Head from 'next/head';
 import {
   getTotalPostNumber,
   getPaginatedPosts,
-} from '../pages/utils/contentful-helper';
+} from '../utils/contentful-helper';
 import Container from '@mui/material/Container';
-import { Config } from '../pages/utils/Config';
+import { Config } from '../utils/Config';
 import { PostList } from '../components/PostList';
 
 export async function getStaticPaths() {

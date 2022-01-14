@@ -1,7 +1,7 @@
 import Head from 'next/head';
-import { getPaginatedPosts } from './utils/contentful-helper';
+import { getPaginatedPosts } from '../utils/contentful-helper';
 import Container from '@mui/material/Container';
-import { Config } from './utils/Config';
+import { Config } from '../utils/Config';
 import { PostList } from '../components/PostList';
 
 export async function getStaticProps() {

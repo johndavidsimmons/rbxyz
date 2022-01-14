@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { getAllPosts, getPost } from '../../pages/utils/contentful-helper';
+import { getAllPosts, getPost } from '../../utils/contentful-helper';
 import { PostCard } from '../../components/PostCard';
 import { Typography, Grid } from '@mui/material';
 import slugStyles from '../../styles/Slug.module.css';

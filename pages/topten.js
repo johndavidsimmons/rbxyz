@@ -8,7 +8,7 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import topStyles from '../styles/Top.module.css';
 
 import Typography from '@mui/material/Typography';
-import { getTopTen } from './utils/contentful-helper';
+import { getTopTen } from '../utils/contentful-helper';
 
 export async function getStaticProps() {
   const topTen = await getTopTen();
