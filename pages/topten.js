@@ -12,7 +12,6 @@ import { getTopTen } from './utils/contentful-helper';
 
 export async function getStaticProps() {
   const topTen = await getTopTen();
-  console.log(topTen);
   return {
     props: {
       topTen: topTen.assetCollection.items,
@@ -21,7 +20,6 @@ export async function getStaticProps() {
 }
 
 export default function topten({ topTen }) {
-  console.log(topTen);
   return (
     <>
       <Head>
@@ -40,7 +38,7 @@ export default function topten({ topTen }) {
         >
           {topTen.map((element, idx) => (
             <>
-              <ListItem alignItems='flex-start' key={idx}>
+              <ListItem alignItems='flex-start' key={`${idx}`}>
                 <ListItemAvatar>
                   <Image
                     alt='Cover art'

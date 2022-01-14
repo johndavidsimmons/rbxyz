@@ -11,7 +11,6 @@ export const Paginate = (props) => {
 
   const router = useRouter();
   const handleChange = (event, value) => {
-    console.log('onCHANGE!!!!');
     if (value > currentPage) {
       router.push({
         pathname: nextPageUrl,

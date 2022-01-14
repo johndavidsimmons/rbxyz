@@ -1,5 +1,5 @@
 {
-  "name": "jsnet",
+  "name": "rbxyz",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -15,6 +15,7 @@
     "@mdi/js": "^6.5.95",
     "@mdi/react": "^1.5.0",
     "@mui/material": "^5.2.7",
+    "graphql": "^16.2.0",
     "graphql-request": "^3.7.0",
     "next": "12.0.7",
     "react": "17.0.2",
