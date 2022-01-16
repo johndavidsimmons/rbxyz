@@ -28,17 +28,11 @@ export default function topten({ topTen }) {
         <title>RB.XYZ - Top Ten</title>
       </Head>
       <Grid item xs={12} padding={2}>
-        <Typography variant='h3' gutterBottom component='div'>
+        <Typography variant='h1' gutterBottom>
           Top 10 Lists
         </Typography>
         <br></br>
-        <Typography
-          variant='h4'
-          gutterBottom
-          component='div'
-          style={{ textDecoration: 'underline' }}
-          className='blue'
-        >
+        <Typography variant='h2' gutterBottom component='div'>
           Albums
         </Typography>
         <Typography variant='caption' component='div' style={{ color: 'gray' }}>

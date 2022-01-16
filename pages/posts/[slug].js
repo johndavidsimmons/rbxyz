@@ -32,9 +32,13 @@ export default function Post({ post }) {
       </Head>
       <Container sx={{ marginLeft: '1em' }}>
         <Typography
-          className='blue'
+          color='primary'
           variant='h5'
-          style={{ paddingBottom: '1em' }}
+          style={{
+            paddingBottom: '1em',
+            marginLeft: '-.75em',
+            paddingTop: '20px',
+          }}
         >
           <span className={slugStyles.backbutton} onClick={() => router.back()}>
             &lt; Back | RB.XYZ Blog

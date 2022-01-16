@@ -25,6 +25,7 @@ export const Paginate = (props) => {
   return (
     <>
       <Pagination
+        size='large'
         count={totalPages}
         color='primary'
         hideNextButton={nextDisabled}

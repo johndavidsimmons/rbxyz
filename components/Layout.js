@@ -27,7 +27,7 @@ const Layout = ({ children }) => {
           </Grid>
         </Grid>
         {/* navigation */}
-        <Grid container spacing={0} direction='row' sx={{ paddingTop: '1em' }}>
+        <Grid container spacing={2} direction='row' sx={{ paddingTop: '1em' }}>
           <Grid item xs={12} sx={{ display: { md: 'none' } }}>
             <Grid
               container
@@ -38,9 +38,8 @@ const Layout = ({ children }) => {
             >
               <MobileHeader />
             </Grid>
-            <Grid item xs={12}>
-              <div style={{ paddingTop: '1em' }}>{children}</div>
-            </Grid>
+
+            <div>{children}</div>
           </Grid>
           <Grid
             item
@@ -51,6 +50,7 @@ const Layout = ({ children }) => {
               <Grid item xs={3}>
                 <Header />
               </Grid>
+              {/* main content */}
               <Grid item xs={9}>
                 <div style={{ padding: '1em' }}>{children}</div>
               </Grid>

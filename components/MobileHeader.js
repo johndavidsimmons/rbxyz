@@ -1,7 +1,6 @@
 import { Button, Icon } from '@mui/material';
 import Image from 'next/image';
 import headerStyles from '../styles/Header.module.scss';
-import { mdiSpotify } from '@mdi/js';
 
 export const MobileHeader = () => {
   const spotifyLink =
@@ -17,15 +16,16 @@ export const MobileHeader = () => {
       />
       <a
         href={spotifyLink}
-        style={{ paddingLeft: '25%' }}
+        style={{ paddingLeft: '100px' }}
         target='_blank'
         rel='noreferrer'
       >
         <Button
           variant='contained'
+          color='secondary'
           sx={{
-            marginBottom: '1em',
-            backgroundColor: '#1DB954',
+            marginBottom: '1rem',
+            color: 'white',
             ':hover': { bgcolor: 'darkgreen' },
           }}
         >

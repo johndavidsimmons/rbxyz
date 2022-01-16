@@ -5,6 +5,7 @@ import { mdiSpotify } from '@mdi/js';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import { makeStyles } from '@mui/material';
 
 export const Header = () => {
   const spotifyLink =
@@ -28,10 +29,11 @@ export const Header = () => {
       >
         <Button
           variant='contained'
+          color='secondary'
           sx={{
             marginTop: '10px',
             minWidth: '100px',
-            backgroundColor: '#1DB954',
+            color: 'white',
             ':hover': { bgcolor: 'darkgreen' },
           }}
         >
@@ -41,7 +43,6 @@ export const Header = () => {
             size={1}
             style={{
               color: 'white',
-              backgroundColor: '#1DB954',
               borderRadius: '50%',
               marginRight: '10px',
               ':hover': { bgcolor: 'darkgreen' },

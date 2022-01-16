@@ -26,9 +26,13 @@ export default function BlogIndex(props) {
       </Head>
       <Container sx={{ marginLeft: '1em' }}>
         <Typography
-          className='blue'
+          color='primary'
           variant='h5'
-          style={{ paddingBottom: '1em' }}
+          style={{
+            paddingBottom: '1em',
+            marginLeft: '-.75em',
+            paddingTop: '20px',
+          }}
         >
           RB.XYZ: A Music Blog
         </Typography>

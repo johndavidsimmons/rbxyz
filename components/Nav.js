@@ -12,7 +12,7 @@ export const Nav = () => {
         container
         spacing={0}
         style={{
-          paddingTop: '20px',
+          paddingTop: '1em',
           backgroundColor: '#2E3B55',
           color: 'white',
         }}
@@ -23,7 +23,6 @@ export const Nav = () => {
             component='div'
             gutterBottom
             style={{
-              fontSize: '48px',
               fontWeight: 'bold',
             }}
           >

@@ -20,16 +20,15 @@ const MobileNav = () => {
   const router = useRouter();
   return (
     <>
-      <AppBar style={{ background: '#2E3B55', height: '80px' }}>
+      <AppBar style={{ height: '80px' }}>
         <Toolbar disableGutters>
           <IconButton onClick={() => setDrawerOpen(true)}>
             <MenuIcon style={{ fill: 'white', fontSize: '75px' }} />
           </IconButton>
           <Typography
-            variant='h2'
+            variant='h1'
             style={{
-              paddingLeft: '60px',
-              fontSize: '40px',
+              paddingLeft: '20px',
               fontWeight: 'bold',
             }}
           >
