@@ -52,6 +52,7 @@ const MobileNav = () => {
             >
               <Link href={_link.path}>
                 <a
+                  onClick={() => setDrawerOpen(false)}
                   className={
                     router.pathname == _link.path ? navStyles.active : ''
                   }

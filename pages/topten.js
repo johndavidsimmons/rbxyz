@@ -7,6 +7,7 @@ import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import topStyles from '../styles/Top.module.scss';
 import { Fragment } from 'react';
+import Grid from '@mui/material/Grid';
 
 import Typography from '@mui/material/Typography';
 import { getTopTen } from '../utils/contentful-helper';
@@ -26,7 +27,7 @@ export default function topten({ topTen }) {
       <Head>
         <title>RB.XYZ - Top Ten</title>
       </Head>
-      <div>
+      <Grid item xs={12} padding={2}>
         <Typography variant='h3' gutterBottom component='div'>
           Top 10 Lists
         </Typography>
@@ -64,7 +65,7 @@ export default function topten({ topTen }) {
             </Fragment>
           ))}
         </List>
-      </div>
+      </Grid>
     </>
   );
 }
