@@ -1,0 +1,9 @@
+.topName span {
+  font-size: 2rem;
+  padding: 1.5rem;
+
+  @media only screen and (max-width: 800px) {
+    font-size: 1em;
+    padding: 1em;
+  }
+}

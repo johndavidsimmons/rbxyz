@@ -4,6 +4,7 @@ import { getAllPosts, getPost } from '../../utils/contentful-helper';
 import { PostCard } from '../../components/PostCard';
 import { Typography, Grid } from '@mui/material';
 import slugStyles from '../../styles/Slug.module.css';
+import { Container } from '@mui/material';
 
 export const getStaticPaths = async () => {
   const data = await getAllPosts();
@@ -29,29 +30,18 @@ export default function Post({ post }) {
       <Head>
         <title>RB - {post.title}</title>
       </Head>
-      <Grid
-        container
-        spacing={2}
-        alignContent='center'
-        justifyContent='left'
-        style={{ paddingBottom: '1em' }}
-      >
-        <Grid item xs={12}>
-          <Typography variant='subtitle1' gutterBottom component='div'>
-            <span
-              className={slugStyles.backbutton}
-              onClick={() => router.back()}
-            >
-              &lt; Back
-            </span>
-          </Typography>
-        </Grid>
-      </Grid>
-      <Grid container spacing={2}>
-        <Grid item xs={10}>
-          <PostCard post={post} />
-        </Grid>
-      </Grid>
+      <Container sx={{ marginLeft: '1em' }}>
+        <Typography
+          className='blue'
+          variant='h5'
+          style={{ paddingBottom: '1em' }}
+        >
+          <span className={slugStyles.backbutton} onClick={() => router.back()}>
+            &lt; Back | RB.XYZ Blog
+          </span>
+        </Typography>
+        <PostCard post={post} slug={true} />
+      </Container>
     </>
   );
 }

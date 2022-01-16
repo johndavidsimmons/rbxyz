@@ -6,6 +6,7 @@ import {
 import Container from '@mui/material/Container';
 import { Config } from '../utils/Config';
 import { PostList } from '../components/PostList';
+import { Typography } from '@mui/material';
 
 export async function getStaticPaths() {
   const totalPosts = await getTotalPostNumber();
@@ -44,10 +45,16 @@ export default function BlogIndex(props) {
   return (
     <>
       <Head>
-        <title>RecordBin</title>
+        <title>RB.XYZ</title>
       </Head>
       <Container sx={{ marginLeft: '1em' }}>
-        <h2>Recent Posts</h2>
+        <Typography
+          className='blue'
+          variant='h5'
+          style={{ paddingBottom: '1em' }}
+        >
+          RB.XYZ Blog
+        </Typography>
         <PostList
           posts={posts}
           totalPages={totalPages}

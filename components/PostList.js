@@ -11,7 +11,7 @@ export const PostList = (props) => {
     <Grid container spacing={1}>
       {posts.map((post, idx) => (
         <Grid item key={idx} xs={12}>
-          <PostCard post={post} />
+          <PostCard post={post} slug={false} />
         </Grid>
       ))}
       <Paginate

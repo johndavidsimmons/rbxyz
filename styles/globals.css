@@ -14,3 +14,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.blue {
+  color: #2e3b55;
+}

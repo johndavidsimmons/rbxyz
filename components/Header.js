@@ -11,51 +11,45 @@ export const Header = () => {
     'https://open.spotify.com/user/johndavidsimmons?si=0d0593c4f6154e36';
   return (
     <>
-      <Grid
-        container
-        spacing={2}
-        direction='column'
-        alignItems='center'
-        justifyContent='center'
+      <div style={{ paddingLeft: '30%' }}>
+        <Image
+          className={headerStyles.profile}
+          src='/images/profile.png'
+          width='150px'
+          height='150px'
+          alt='profile picture'
+        />
+      </div>
+      <a
+        href={spotifyLink}
+        target='_blank'
+        rel='noreferrer'
+        style={{ paddingLeft: '22%' }}
       >
-        <Grid item xs={12}>
-          <Image
-            className={headerStyles.profile}
-            src='/images/profile.png'
-            width='100'
-            height='100'
-            alt='profile picture'
-          />
-        </Grid>
-        <Grid item xs={8} width='60%'>
-          <Typography variant='subtitle1' gutterBottom component='div'>
-            I use this blog as a way to learn React, NextJS, Contentful, and the
-            Spotify API.
-          </Typography>
-        </Grid>
-        <Grid item xs={12}>
+        <Button
+          variant='contained'
+          sx={{
+            marginTop: '10px',
+            minWidth: '100px',
+            backgroundColor: '#1DB954',
+            ':hover': { bgcolor: 'darkgreen' },
+          }}
+        >
           <Icon
             path={mdiSpotify}
             title='Spotify Icon'
-            size={2}
+            size={1}
             style={{
-              color: '#1DB954',
-              backgroundColor: 'black',
+              color: 'white',
+              backgroundColor: '#1DB954',
               borderRadius: '50%',
+              marginRight: '10px',
+              ':hover': { bgcolor: 'darkgreen' },
             }}
           />
-        </Grid>
-        <Grid item xs={12}>
-          <a href={spotifyLink}>
-            <Button variant='contained'>Follow Me on Spotify</Button>
-          </a>
-        </Grid>
-        <Grid item xs={12}>
-          <Typography variant='subtitle2' gutterBottom component='div'>
-            Spotify API stuff here
-          </Typography>
-        </Grid>
-      </Grid>
+          Follow Me on Spotify
+        </Button>
+      </a>
     </>
   );
 };

@@ -8,8 +8,16 @@ export const Nav = () => {
   const router = useRouter();
   return (
     <>
-      <Grid container spacing={2} style={{ paddingTop: '1em' }}>
-        <Grid item xs={3} style={{ paddingLeft: '7%', paddingBottom: '1em' }}>
+      <Grid
+        container
+        spacing={0}
+        style={{
+          paddingTop: '1em',
+          backgroundColor: '#2E3B55',
+          color: 'white',
+        }}
+      >
+        <Grid item xs={3} style={{ paddingLeft: '7%' }}>
           <Typography
             variant='h1'
             component='div'
@@ -20,13 +28,6 @@ export const Nav = () => {
             }}
           >
             <Link href={'/'}>RB.XYZ</Link>
-          </Typography>
-          <Typography
-            variant='body2'
-            gutterBottom
-            style={{ marginTop: '-1em' }}
-          >
-            My random thoughts about Music
           </Typography>
         </Grid>
         <Grid item xs={9}>
@@ -59,3 +60,4 @@ export const Nav = () => {
 };
 
 export default Nav;
+// backgroundColor: '#2E3B55',

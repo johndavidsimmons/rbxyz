@@ -3,6 +3,7 @@ import { getPaginatedPosts } from '../utils/contentful-helper';
 import Container from '@mui/material/Container';
 import { Config } from '../utils/Config';
 import { PostList } from '../components/PostList';
+import { Typography } from '@mui/material';
 
 export async function getStaticProps() {
   const posts = await getPaginatedPosts(1);
@@ -21,9 +22,16 @@ export default function BlogIndex(props) {
   return (
     <>
       <Head>
-        <title>RecordBin</title>
+        <title>RB.XYZ</title>
       </Head>
       <Container sx={{ marginLeft: '1em' }}>
+        <Typography
+          className='blue'
+          variant='h5'
+          style={{ paddingBottom: '1em' }}
+        >
+          RB.XYZ: A Music Blog
+        </Typography>
         <PostList
           posts={posts}
           totalPages={totalPages}
