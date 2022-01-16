@@ -12,18 +12,18 @@ export const Nav = () => {
         container
         spacing={0}
         style={{
-          paddingTop: '1em',
+          paddingTop: '20px',
           backgroundColor: '#2E3B55',
           color: 'white',
         }}
       >
-        <Grid item xs={3} style={{ paddingLeft: '7%' }}>
+        <Grid item xs={3} style={{ paddingLeft: '125px' }}>
           <Typography
             variant='h1'
             component='div'
             gutterBottom
             style={{
-              fontSize: '3em',
+              fontSize: '48px',
               fontWeight: 'bold',
             }}
           >

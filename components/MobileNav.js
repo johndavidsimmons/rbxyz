@@ -25,7 +25,14 @@ const MobileNav = () => {
           <IconButton onClick={() => setDrawerOpen(true)}>
             <MenuIcon style={{ fill: 'white', fontSize: '75px' }} />
           </IconButton>
-          <Typography variant='h2' style={{ paddingLeft: '40px' }}>
+          <Typography
+            variant='h2'
+            style={{
+              paddingLeft: '60px',
+              fontSize: '40px',
+              fontWeight: 'bold',
+            }}
+          >
             <Link href='/'>RB.XYZ</Link>
           </Typography>
         </Toolbar>
