@@ -8,6 +8,7 @@ import Icon from '@mdi/react';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 import { INLINES, BLOCKS } from '@contentful/rich-text-types';
+import postCardStyles from '../styles/PostCard.module.scss';
 
 // custom settings for rich text render
 const richTextOptions = {
@@ -21,8 +22,7 @@ const richTextOptions = {
       if (node.data.uri.includes('youtube.com')) {
         return (
           <iframe
-            width='560'
-            height='315'
+            className={postCardStyles.youtube}
             src={node.data.uri}
             title='YouTube video player'
             frameBorder='0'
@@ -43,8 +43,12 @@ export const PostCard = ({ post, slug }) => {
     <>
       <Grid item xs={12}>
         <Grid container spacing={0}>
-          <Grid item xs={10} style={{ marginTop: '-1.5em' }}>
-            <Typography variant='h1' fontSize={48} pt={2}>
+          <Grid item xs={12} style={{ marginTop: '-1.5em' }}>
+            <Typography
+              variant='h1'
+              pt={2}
+              className={postCardStyles.postTitle}
+            >
               {!slug && <Link href={`/posts/${post.slug}`}>{post.title}</Link>}
               {slug && <>{post.title}</>}
             </Typography>

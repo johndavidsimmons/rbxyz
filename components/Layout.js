@@ -39,7 +39,7 @@ const Layout = ({ children }) => {
               <MobileHeader />
             </Grid>
             <Grid item xs={12}>
-              <div style={{ padding: '1em' }}>{children}</div>
+              <div style={{ padding: '1em 0 0 0' }}>{children}</div>
             </Grid>
           </Grid>
           <Grid

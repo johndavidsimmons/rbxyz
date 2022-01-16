@@ -8,6 +8,7 @@ import { List, ListItem, ListItemText, Divider } from '@mui/material';
 import navStyles from '../styles/Nav.module.scss';
 import { useRouter } from 'next/router';
 import Typography from '@mui/material/Typography';
+import { makeStyles } from '@mui/material';
 
 const links = [
   { text: 'Home', path: '/' },
@@ -19,12 +20,12 @@ const MobileNav = () => {
   const router = useRouter();
   return (
     <>
-      <AppBar style={{ background: '#2E3B55' }}>
+      <AppBar style={{ background: '#2E3B55', height: '80px' }}>
         <Toolbar disableGutters>
           <IconButton onClick={() => setDrawerOpen(true)}>
-            <MenuIcon style={{ fill: 'white' }} />
+            <MenuIcon style={{ fill: 'white', fontSize: '75px' }} />
           </IconButton>
-          <Typography variant='h6' style={{ paddingLeft: '5%' }}>
+          <Typography variant='h2' style={{ paddingLeft: '40px' }}>
             <Link href='/'>RB.XYZ</Link>
           </Typography>
         </Toolbar>
@@ -37,14 +38,14 @@ const MobileNav = () => {
         <List style={{ background: '#2E3B55', height: '100%' }}>
           <ListItem>
             <IconButton onClick={() => setDrawerOpen(false)}>
-              <MenuIcon style={{ fill: 'white' }} />
+              <MenuIcon style={{ fill: 'white', fontSize: '75px' }} />
             </IconButton>
           </ListItem>
           {links.map((_link, idx) => (
             <ListItem
               sx={{
                 margin: '0 50px 10px 10px',
-                fontSize: '24px',
+                fontSize: '50px',
                 color: 'white',
               }}
               key={idx}

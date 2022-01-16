@@ -1,0 +1,14 @@
+.postTitle {
+  font-size: 2vw;
+  @media only screen and (max-width: 800px) {
+    font-size: 8vw;
+  }
+}
+
+.youtube {
+  width: 50%;
+  height: 315px;
+  @media only screen and (max-width: 800px) {
+    width: 100%;
+  }
+}
