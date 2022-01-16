@@ -51,9 +51,13 @@ export default function BlogIndex(props) {
         <Typography
           color='primary'
           variant='h5'
-          style={{ paddingBottom: '1em' }}
+          style={{
+            paddingBottom: '1em',
+            marginLeft: '-.75em',
+            paddingTop: '20px',
+          }}
         >
-          RB.XYZ Blog
+          RB.XYZ: A Music Blog
         </Typography>
         <PostList
           posts={posts}
