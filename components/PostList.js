@@ -1,4 +1,3 @@
-import Grid from '@mui/material/Grid';
 import { PostCard } from './PostCard';
 import { Paginate } from './Paginate';
 
@@ -8,11 +7,9 @@ export const PostList = (props) => {
   const nextDisabled = parseInt(currentPage, 10) === parseInt(totalPages, 10);
   const prevDisabled = parseInt(currentPage, 10) === 1;
   return (
-    <Grid container spacing={0}>
+    <>
       {posts.map((post, idx) => (
-        <Grid item key={idx} xs={12}>
-          <PostCard post={post} slug={false} />
-        </Grid>
+        <PostCard key={idx} post={post} slug={false} />
       ))}
       <Paginate
         totalPages={totalPages}
@@ -20,6 +17,6 @@ export const PostList = (props) => {
         nextDisabled={nextDisabled}
         prevDisabled={prevDisabled}
       />
-    </Grid>
+    </>
   );
 };

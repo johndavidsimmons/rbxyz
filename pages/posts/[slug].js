@@ -2,9 +2,39 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { getAllPosts, getPost } from '../../utils/contentful-helper';
 import { PostCard } from '../../components/PostCard';
-import { Typography, Grid } from '@mui/material';
+import { BodyContent } from '../../components/BodyContent';
+import { Typography, Grid, Button, Icon } from '@mui/material';
 import slugStyles from '../../styles/Slug.module.css';
-import { Container } from '@mui/material';
+import { INLINES, BLOCKS } from '@contentful/rich-text-types';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import postCardStyles from '../../styles/PostCard.module.scss';
+import { Divider } from '@mui/material';
+
+// custom settings for rich text render
+const richTextOptions = {
+  renderNode: {
+    [BLOCKS.PARAGRAPH]: (node, children) => (
+      <Typography variant='body1' gutterBottom lineHeight={1.75}>
+        {children}
+      </Typography>
+    ),
+    [INLINES.HYPERLINK]: (node, children) => {
+      if (node.data.uri.includes('youtube.com')) {
+        return (
+          <iframe
+            className={postCardStyles.youtube}
+            src={node.data.uri}
+            title='YouTube video player'
+            frameBorder='0'
+            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+            allowFullScreen
+            style={{ paddingTop: '1em' }}
+          ></iframe>
+        );
+      }
+    },
+  },
+};
 
 export const getStaticPaths = async () => {
   const data = await getAllPosts();
@@ -25,27 +55,16 @@ export const getStaticProps = async (context) => {
 
 export default function Post({ post }) {
   const router = useRouter();
+  const path = router.pathname;
+
   return (
     <>
       <Head>
-        <title>RB - {post.title}</title>
+        <title>RB.XYZ - {post.title}</title>
       </Head>
-      <Container sx={{ marginLeft: '1em' }}>
-        <Typography
-          color='primary'
-          variant='h5'
-          style={{
-            paddingBottom: '1em',
-            marginLeft: '-.75em',
-            paddingTop: '20px',
-          }}
-        >
-          <span className={slugStyles.backbutton} onClick={() => router.back()}>
-            &lt; Back | RB.XYZ Blog
-          </span>
-        </Typography>
-        <PostCard post={post} slug={true} />
-      </Container>
+      <BodyContent path={path}>
+        <PostCard post={post} />
+      </BodyContent>
     </>
   );
 }

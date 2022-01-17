@@ -52,7 +52,7 @@ const Layout = ({ children }) => {
               </Grid>
               {/* main content */}
               <Grid item xs={9}>
-                <div style={{ padding: '1em' }}>{children}</div>
+                {children}
               </Grid>
             </Grid>
           </Grid>

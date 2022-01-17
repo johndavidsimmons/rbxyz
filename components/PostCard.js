@@ -36,14 +36,13 @@ const richTextOptions = {
   },
 };
 
-export const PostCard = ({ post, slug }) => {
+export const PostCard = ({ post }) => {
   const richText = post.content.json;
   const formattedDate = new Date(post.publishDate).toLocaleDateString();
   return (
-    <div className={postCardStyles.postCard}>
+    <>
       <Typography variant='h1' pt={2}>
-        {!slug && <Link href={`/posts/${post.slug}`}>{post.title}</Link>}
-        {slug && <>{post.title}</>}
+        {post.title}
       </Typography>
       <Typography
         variant='subtitle1'
@@ -55,27 +54,18 @@ export const PostCard = ({ post, slug }) => {
       <a href={post.spotifyUri} target='_blank' rel='noreferrer'>
         <Button
           variant='contained'
+          color='secondary'
           sx={{
+            color: 'white',
             marginBottom: '1em',
-            backgroundColor: '#1DB954',
             ':hover': { bgcolor: 'darkgreen' },
           }}
         >
-          <Icon
-            path={mdiSpotify}
-            title='Spotify Icon'
-            size={1}
-            style={{
-              color: 'white',
-              borderRadius: '50%',
-              marginRight: '10px',
-            }}
-          />
-          Listen on Spotify
+          Artist Spotify
         </Button>
       </a>
-      <div>{documentToReactComponents(richText, richTextOptions)}</div>
+      {documentToReactComponents(richText, richTextOptions)}
       <Divider style={{ margin: '2em 0 2em 0' }} variant='fullWidth'></Divider>
-    </div>
+    </>
   );
 };
