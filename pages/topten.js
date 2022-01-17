@@ -7,7 +7,8 @@ import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import topStyles from '../styles/Top.module.scss';
 import { Fragment } from 'react';
-import Grid from '@mui/material/Grid';
+import { BodyContent } from '../components/BodyContent';
+import { useRouter } from 'next/router';
 
 import Typography from '@mui/material/Typography';
 import { getTopTen } from '../utils/contentful-helper';
@@ -21,18 +22,21 @@ export async function getStaticProps() {
   };
 }
 
-export default function topten({ topTen }) {
+export default function TopTen({ topTen }) {
+  const router = useRouter();
+  const path = router.pathname;
   return (
     <>
       <Head>
         <title>RB.XYZ - Top Ten</title>
       </Head>
-      <Grid item xs={12} padding={2}>
-        <Typography variant='h1' gutterBottom>
-          Top 10 Lists
-        </Typography>
-        <br></br>
-        <Typography variant='h2' gutterBottom component='div'>
+      <BodyContent path={path}>
+        <Typography
+          variant='h2'
+          gutterBottom
+          component='div'
+          style={{ paddingTop: '1em' }}
+        >
           Albums
         </Typography>
         <Typography variant='caption' component='div' style={{ color: 'gray' }}>
@@ -59,7 +63,7 @@ export default function topten({ topTen }) {
             </Fragment>
           ))}
         </List>
-      </Grid>
+      </BodyContent>
     </>
   );
 }

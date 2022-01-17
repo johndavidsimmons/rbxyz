@@ -36,7 +36,7 @@ export const BodyContent = ({ path, children }) => {
             )}
           </Typography>
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} sx={{ paddingRight: { xs: 'none', md: '20%' } }}>
           {children}
         </Grid>
       </Grid>
