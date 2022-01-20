@@ -3,9 +3,14 @@ import { Config } from './Config';
 
 const endpoint = `https://graphql.contentful.com/content/v1/spaces/${process.env.SPACE_ID}`;
 
+const preview = process.env.CONTENTFUL_PREVIEW == 'true' ? true : false;
+const accessToken = preview
+  ? process.env.PREVIEW_ACCESS_TOKEN
+  : process.env.ACCESS_TOKEN;
+
 const graphQLClient = new GraphQLClient(endpoint, {
   headers: {
-    authorization: `Bearer ${process.env.ACCESS_TOKEN}`,
+    authorization: `Bearer ${accessToken}`,
   },
 });
 
@@ -18,7 +23,8 @@ export const getTopTen = async () => {
             tags_exists: true
             tags: { id_contains_all: ["top"] }
           }
-        }
+        },
+        preview: ${preview}
       ) {
         items {
           title
@@ -36,7 +42,7 @@ export const getTopTen = async () => {
 export const getAllPosts = async () => {
   const query = gql`
     {
-      blogPostCollection {
+      blogPostCollection(preview: ${preview}) {
         total
         items {
           sys {
@@ -46,9 +52,6 @@ export const getAllPosts = async () => {
           publishDate
           slug
           spotifyUri
-          coverImage {
-            url
-          }
         }
       }
     }
@@ -59,7 +62,7 @@ export const getAllPosts = async () => {
 export const getTotalPostNumber = async () => {
   const query = gql`
     {
-      blogPostCollection {
+      blogPostCollection(preview: ${preview}) {
         total
       }
     }
@@ -74,19 +77,13 @@ export const getTotalPostNumber = async () => {
 export const getPost = async (slug) => {
   const query = gql`
     query getPost($slug: String!) {
-      blogPostCollection(where: { slug: $slug }) {
+      blogPostCollection(where: { slug: $slug }, preview: ${preview}) {
         items {
           title
           publishDate
           spotifyUri
           content {
             json
-          }
-          coverImage {
-            url
-            title
-            height
-            width
           }
         }
       }
@@ -107,7 +104,7 @@ export const getPaginatedPosts = async (page) => {
 
   const query = gql`
     {
-      blogPostCollection(limit: ${Config.pagination.pageSize}, skip: ${skip}, order: publishDate_DESC) {
+      blogPostCollection(limit: ${Config.pagination.pageSize}, skip: ${skip}, order: publishDate_DESC, preview: ${preview}) {
         total
         items {
           sys {
@@ -120,9 +117,6 @@ export const getPaginatedPosts = async (page) => {
           publishDate
           slug
           spotifyUri
-          coverImage {
-            url
-          }
         }
       }
     }
