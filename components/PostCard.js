@@ -36,34 +36,54 @@ const richTextOptions = {
   },
 };
 
+const esperantoMonths = {
+  1: 'Januaro',
+  2: 'Februaro',
+  3: 'Marto',
+  4: 'Aprilo',
+  5: 'Majo',
+  6: 'Junio',
+  7: 'Julio',
+  8: 'Aŭgusto',
+  9: 'Septembro',
+  10: 'Oktobro',
+  11: 'Novembro',
+  12: 'Decembro',
+};
+
 export const PostCard = ({ post }) => {
   const richText = post.content.json;
   const formattedDate = new Date(post.publishDate).toLocaleDateString();
+  const postMonth = `${esperantoMonths[formattedDate.split('/')[0]]}`;
   return (
     <>
       <Typography variant='h1' pt={2}>
-        {post.title}
+        {post.slug && <Link href={`/posts/${post.slug}`}>{post.title}</Link>}
+        {!post.slug && <>{post.title}</>}
       </Typography>
       <Typography
         variant='subtitle1'
         color='text.secondary'
-        style={{ display: 'block', margin: '0 0 1em 0' }}
+        style={{ display: 'block', margin: '.4em 0 1em 0' }}
       >
-        Posted: {formattedDate}
+        Posted: {postMonth} {formattedDate.split('/').slice(1, 3).join(', ')}
       </Typography>
-      <a href={post.spotifyUri} target='_blank' rel='noreferrer'>
-        <Button
-          variant='contained'
-          color='secondary'
-          sx={{
-            color: 'white',
-            marginBottom: '1em',
-            ':hover': { bgcolor: 'darkgreen' },
-          }}
-        >
-          Artist Spotify
-        </Button>
-      </a>
+      {post.spotifyUri && (
+        <a href={post.spotifyUri} target='_blank' rel='noreferrer'>
+          <Button
+            variant='contained'
+            color='secondary'
+            sx={{
+              color: 'white',
+              marginBottom: '1em',
+              ':hover': { bgcolor: 'darkgreen' },
+            }}
+          >
+            Artist Spotify
+          </Button>
+        </a>
+      )}
+
       {documentToReactComponents(richText, richTextOptions)}
       <Divider style={{ margin: '2em 0 2em 0' }} variant='fullWidth'></Divider>
     </>
