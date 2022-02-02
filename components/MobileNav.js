@@ -11,8 +11,8 @@ import Typography from '@mui/material/Typography';
 import { makeStyles } from '@mui/material';
 
 const links = [
-  { text: 'Home', path: '/' },
-  { text: 'Top Ten', path: '/topten' },
+  { text: 'Hejmo', path: '/' },
+  { text: 'Plej Dek', path: '/topten' },
 ];
 
 const MobileNav = () => {
@@ -32,7 +32,7 @@ const MobileNav = () => {
               fontWeight: 'bold',
             }}
           >
-            <Link href='/'>RB.XYZ</Link>
+            <Link href='/'>MUSIKO.NET</Link>
           </Typography>
         </Toolbar>
       </AppBar>

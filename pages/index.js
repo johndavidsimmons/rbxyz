@@ -1,9 +1,7 @@
 import Head from 'next/head';
 import { getPaginatedPosts } from '../utils/contentful-helper';
-import Container from '@mui/material/Container';
 import { Config } from '../utils/Config';
 import { PostList } from '../components/PostList';
-import { Typography } from '@mui/material';
 import { BodyContent } from '../components/BodyContent';
 import { useRouter } from 'next/router';
 
@@ -26,7 +24,7 @@ export default function BlogIndex(props) {
   return (
     <>
       <Head>
-        <title>RB.XYZ</title>
+        <title>MUSIKO.NET</title>
       </Head>
       <BodyContent path={path}>
         <PostList

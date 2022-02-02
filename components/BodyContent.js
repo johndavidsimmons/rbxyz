@@ -32,7 +32,7 @@ export const BodyContent = ({ path, children }) => {
             )}
             {path.includes('topten') && <span>Top Ten Lists</span>}
             {!path.includes('topten') && !path.includes('posts') && (
-              <span>RB.XYZ: Mia musiko blogo en Esperanton</span>
+              <span>MUSIKO.NET: Mia musiko blogo en Esperanton</span>
             )}
           </Typography>
         </Grid>

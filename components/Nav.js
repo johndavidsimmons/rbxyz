@@ -26,7 +26,7 @@ export const Nav = () => {
               fontWeight: 'bold',
             }}
           >
-            <Link href={'/'}>RB.XYZ</Link>
+            <Link href={'/'}>MUSIKO.NET</Link>
           </Typography>
         </Grid>
         <Grid item xs={9}>
@@ -35,7 +35,7 @@ export const Nav = () => {
               <li>
                 <Link href='/'>
                   <a className={router.pathname == '/' ? navStyles.active : ''}>
-                    Home
+                    Hejmo
                   </a>
                 </Link>
               </li>
@@ -46,7 +46,7 @@ export const Nav = () => {
                       router.pathname == '/topten' ? navStyles.active : ''
                     }
                   >
-                    Top 10
+                    Plej Dek
                   </a>
                 </Link>
               </li>
