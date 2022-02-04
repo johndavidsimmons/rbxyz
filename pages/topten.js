@@ -28,7 +28,7 @@ export default function TopTen({ topTen }) {
   return (
     <>
       <Head>
-        <title>RB.XYZ - Top Ten</title>
+        <title>MUSIKO.NET - Top Ten</title>
       </Head>
       <BodyContent path={path}>
         <Typography

@@ -60,7 +60,7 @@ export default function Post({ post }) {
   return (
     <>
       <Head>
-        <title>RB.XYZ - {post.title}</title>
+        <title>MUSIKO.NET - {post.title}</title>
       </Head>
       <BodyContent path={path}>
         <PostCard post={post} />
