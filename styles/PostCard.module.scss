@@ -13,3 +13,9 @@
     margin-left: -1em;
   }
 }
+
+.titleHover {
+  :hover {
+    text-decoration: underline;
+  }
+}

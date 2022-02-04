@@ -57,7 +57,7 @@ export const PostCard = ({ post }) => {
   const postMonth = `${esperantoMonths[formattedDate.split('/')[0]]}`;
   return (
     <>
-      <Typography variant='h1' pt={2}>
+      <Typography variant='h1' pt={2} className={postCardStyles.titleHover}>
         {post.slug && <Link href={`/posts/${post.slug}`}>{post.title}</Link>}
         {!post.slug && <>{post.title}</>}
       </Typography>
