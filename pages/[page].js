@@ -48,7 +48,7 @@ export default function BlogIndex(props) {
   return (
     <>
       <Head>
-        <title>RB.XYZ</title>
+        <title>MUSIKO.NET</title>
       </Head>
       <BodyContent path={path}>
         <PostList
