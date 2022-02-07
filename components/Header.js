@@ -68,8 +68,9 @@ export const Header = () => {
                 gutterBottom
                 style={{ textAlign: 'center', margin: '2em' }}
               >
-                Mi estas programisto kaj mi skribas ĉi tio blogo al praktas
-                Esperanto kaj nova interneto teĥnologioj.
+                Mi estas programisto kaj mi skribas ĉi tiun blogon por ekzerci
+                min en Esperanto. Ankaŭ mi provas lerni novaj teĥnologioj de la
+                interreto.
               </Typography>
             </Grid>
           </Grid>
