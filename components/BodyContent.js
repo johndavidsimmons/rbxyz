@@ -27,7 +27,7 @@ export const BodyContent = ({ path, children }) => {
                 className={slugStyles.backbutton}
                 onClick={() => router.back()}
               >
-                &lt; Back
+                &lt; All Posts
               </span>
             )}
             {path.includes('topten') && <span>Top Ten Lists</span>}
