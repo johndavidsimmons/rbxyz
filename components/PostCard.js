@@ -1,14 +1,11 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { Typography } from '@mui/material';
-import Grid from '@mui/material/Grid';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { mdiSpotify } from '@mdi/js';
-import Icon from '@mdi/react';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 import { INLINES, BLOCKS } from '@contentful/rich-text-types';
 import postCardStyles from '../styles/PostCard.module.scss';
+import Head from 'next/head';
 
 // custom settings for rich text render
 const richTextOptions = {
@@ -53,10 +50,18 @@ const esperantoMonths = {
 
 export const PostCard = ({ post }) => {
   const richText = post.content.json;
+  const twitterDescription =
+    post.content.json.content[0].content[0].value.slice(0, 100);
   const formattedDate = new Date(post.publishDate).toLocaleDateString();
   const postMonth = `${esperantoMonths[formattedDate.split('/')[0]]}`;
   return (
     <>
+      <Head>
+        <meta name='twitter:card' content='summary' />
+        <meta name='twitter:title' content={post.title} />
+        <meta name='twitter:creator' content='@Musiko_Net' />
+        <meta name='twitter:description' content={twitterDescription} />
+      </Head>
       <Typography variant='h1' pt={2} className={postCardStyles.titleHover}>
         {post.slug && <Link href={`/posts/${post.slug}`}>{post.title}</Link>}
         {!post.slug && <>{post.title}</>}
