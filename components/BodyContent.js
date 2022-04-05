@@ -30,7 +30,7 @@ export const BodyContent = ({ path, children }) => {
                 &lt; All Posts
               </span>
             )}
-            {path.includes('topten') && <span>Top Ten Lists</span>}
+            {path.includes('topten') && <span>Mia Plej Bona Dek Albumoj</span>}
             {!path.includes('topten') && !path.includes('posts') && (
               <span>MUSIKO.NET: Mia musiko blogo en Esperanton</span>
             )}

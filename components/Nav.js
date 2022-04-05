@@ -46,7 +46,7 @@ export const Nav = () => {
                       router.pathname == '/topten' ? navStyles.active : ''
                     }
                   >
-                    Plej Dek
+                    Plej Bona Dek
                   </a>
                 </Link>
               </li>
