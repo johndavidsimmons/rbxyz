@@ -2,12 +2,14 @@
   "name": "rbxyz",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "npm run partytown && next dev",
+    "build": "npm run partytown && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "partytown": "partytown copylib public/~partytown"
   },
   "dependencies": {
+    "@builder.io/partytown": "^0.7.3",
     "@contentful/rich-text-html-renderer": "^15.11.1",
     "@contentful/rich-text-react-renderer": "^15.11.1",
     "@emotion/react": "^11.7.1",
