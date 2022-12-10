@@ -69,7 +69,7 @@ export const Header = () => {
                 style={{ textAlign: 'center', margin: '2em' }}
               >
                 Mi estas programisto kaj mi skribas ĉi tiun blogon por ekzerci
-                min en Esperanto. Ankaŭ mi provas lerni novaj teĥnologioj de la
+                mia Esperanto. Ankaŭ mi provas lerni novaj teĥnologioj de la
                 interreto.
               </Typography>
             </Grid>
